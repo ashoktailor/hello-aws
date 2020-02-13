@@ -1,0 +1,38 @@
+this file explains the steps to integrate my Cloud9 environment with a Git repository using ssh
+
+1. create Cloud9 environment which will have Git installed.  to check if Git is installed run:
+
+    $ git --version
+    
+2. generate an RSA key pair in your Cloud9 environment.
+
+    $ ssh-keygen -t rsa
+    
+   note: enter full pathname of file when prompted i.e. 
+   
+    >> /home/ec2-user/.ssh/id_rsa
+    
+3. copy your newly generated Public key.  i.e. open /home/ec2-user/.ssh/id_rsa.pub
+
+4. goto Github >> Settings >> SSH and GPS keys and add a new key with the content from previous step.
+
+5. back in Cloud9 environment, start ssh-agent and add ssh key:
+
+    $ eval $(ssh-agent -s)
+    $ ssh-add /home/ec2-user/.ssh/id_rsa
+    
+6. back in Github, 
+    a. navigate to the repository you wish to clone in Cloud9 
+    b. press the green  "Clone or download" button
+    c. check that you've selected "Clone with ssh"
+    d. copy the URL
+
+7. back to Cloud9, open a terminal and type:
+
+    $ git clone git@github.com:<YOUR RESPOSITORY NAME>
+    
+Next steps
+
+    - not sure if I need to start the ssh-agent each time I open my Cloud9 environment?
+    
+    
