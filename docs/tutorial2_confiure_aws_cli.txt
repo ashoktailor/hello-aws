@@ -1,0 +1,14 @@
+this tutorial explains how to configure the AWS command line interface for use with terraform
+
+1. with Cloud9 IDE, AWS CLI seems to be installed by default.
+
+2. start by creating an Admin IAM user 
+
+    a. instructions for creating Administrator account here - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html
+
+3. configure the AWS CLI
+
+    b. instructions for configuring CLI can be found here -- https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+    
+
+    
