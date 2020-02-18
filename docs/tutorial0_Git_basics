@@ -1,0 +1,16 @@
+
+1. check status
+
+    $ git status
+    
+2. add files to staging area
+
+    $ git add --all
+    
+3. commit staged files
+
+    $ git commit -m "commit message"
+    
+4. push and commit to remote respository
+
+    $ git push

@@ -6,9 +6,40 @@ this tutorial explains how to configure the AWS command line interface for use w
 
     a. instructions for creating Administrator account here - https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html
 
-3. configure the AWS CLI
+3. configure the AWS CLI NOTE: seems to be installed by default in Cloud9
 
-    b. instructions for configuring CLI can be found here -- https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+    a. instructions for configuring CLI can be found here -- https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
     
+4. install terraform:
 
+    a. goto terraform.io/downloads and copy link address for 64-bit linux
+    
+    b. create a downloads folder in your environment and download and unzip terraform using wget:
+    
+        $ wget <link address for download>
+        $ unzip terraform...amd64.zip
+        
+    c. update PATH so we can call terraform binary. edit .bash_profile and add to end of file:
+    
+        export PATH=$HOME/environment/downloads:$PATH
+    
+    d. might need to open new shell to pick up new PATH
+    
+    e. check installation by running:
+    
+        $ terraform --version
+        
+5. test terraform
+
+    a. follow tutorial here to create an ec2 instance - https://learn.hashicorp.com/terraform/getting-started/build
+
+6. tell Git to ignore certain terraform files and directories 
+
+    a. open /.git/info/exclude
+    
+    b. add following lines
+    
+        terraform.tfstate
+        terraform.tfstate.backup
+        /terraform/*
     
