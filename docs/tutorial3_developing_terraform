@@ -1,0 +1,33 @@
+
+useful terraform commands
+
+    $ terraform init        // initialises local settings and data
+    
+    $ terraform fmt         // enables standardisation and updates conf
+    
+    $ terraform validate    // check and report errors within modules
+    
+    $ terraform plan        // see execution plan before applying
+    
+    $ terraform apply       // execute
+    
+    $ terraform show        // inspect current state
+    
+    $ terraform destroy     // completely destroy
+    
+===========================================================================================
+
+
+1. to define variable to be used by terraform
+
+    a. in the same directory as your example.tf file, create variables.tf with contents:
+    
+        variable "region" {
+            default = "eu-west-1"
+        }
+        
+    b. amend example.tf to read:
+    
+        provider "aws" {
+            region = var.region
+        }
